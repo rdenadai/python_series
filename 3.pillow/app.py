@@ -34,7 +34,7 @@ class ImageTransformer:
     def thumbnail(
         image: Image.Image | None,
         size: tuple[int, int] = (256, 256),
-        resample=Image.BICUBIC,
+        resample: int = Image.BICUBIC,
     ) -> Image.Image | None:
         if image:
             image.thumbnail(size, resample=resample)
@@ -48,7 +48,11 @@ class ImageTransformer:
         return None
 
     @staticmethod
-    def colorize(image: Image.Image | None, black: str = "blue", white: str = "yellow") -> Image.Image | None:
+    def colorize(
+        image: Image.Image | None,
+        black: str = "blue",
+        white: str = "yellow",
+    ) -> Image.Image | None:
         if image:
             gray_image = image.convert("L")
             return ImageOps.colorize(gray_image, black, white)
@@ -155,7 +159,9 @@ class MainWindow(QMainWindow):
             self._image = self._org_image.copy()
             self.show_image(self._image)
 
-    def show_image(self, image: Image.Image):
+    def show_image(self, image: Image.Image | None = None):
+        if not image:
+            return
         pixmap = QPixmap.fromImage(QImage(image.tobytes(), image.width, image.height, QImage.Format_RGB888))
         self._label.setPixmap(pixmap)
 
