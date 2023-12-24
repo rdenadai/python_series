@@ -12,8 +12,11 @@ httpx = "^0.25.0"
 numba = "^0.58.0"
 psutil = "^5.9.5"
 netifaces = "^0.11.0"
-pillow = "^10.1.0"
 pyside6 = "^6.6.0"
+matplotlib = "^3.8.2"
+scikit-learn = "^1.3.2"
+pillow = "9.3.0"
+arcade = "^2.6.17"
 
 
 [tool.poetry.group.dev.dependencies]
