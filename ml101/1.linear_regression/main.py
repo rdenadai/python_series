@@ -47,7 +47,7 @@ def linear_regression_gd(data: tuple, learning_rate: float = 1e-3, epochs: int =
     """
     Linear regression using gradient descent
     """
-    slop, intercep = random() * sqrt(2.0 / (2 - 1)), 1
+    slop, intercep = random() * sqrt(2.0 / (2 - 1)), 1.0
     for _ in range(epochs + 1):
         for X, y in zip(*data):
             y_hat = slop * X + intercep
