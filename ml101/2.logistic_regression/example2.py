@@ -30,7 +30,6 @@ def linspace(start, stop, num):
 
 def main() -> None:
     X, y = create_dataset(num_samples=500)
-    print(X[:10], y[:10])
     X = [x / 100 for x in X]
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=SEED)
