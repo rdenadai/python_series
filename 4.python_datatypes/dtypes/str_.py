@@ -4,6 +4,7 @@ def type_str():
     print(type(v))  # <class 'str'>
     print(id(v))  # ex: 139716794520864
     print(v[2])  # c
+    v[2] = "z"  # TypeError: 'str' object does not support item assignment
 
     v2 = "abcd"
     print(v == v2)  # True

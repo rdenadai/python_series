@@ -8,6 +8,7 @@ def type_complex():
     print(v.imag)  # 2.0
     print(v + 1.5)  # (2.5+2j)
     print(v + 2)  # (3+2j)
+    print(v + 3j)  # (1+5j)
 
 
 def main():

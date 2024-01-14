@@ -5,6 +5,7 @@ def type_int():
     print(type(v))  # <class 'int'>
     print(id(v))  # ex: 139716794520864
     print(v.to_bytes(1, "big"))  # b'\x01'
+    print(12_000_000, 12000000)
 
 
 def main():
