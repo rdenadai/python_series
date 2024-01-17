@@ -2,11 +2,11 @@ from time import perf_counter
 
 
 def perf_list(l):
-    return 999999 in l
+    return 999_999 in l
 
 
 def perf_set(s):
-    return 999999 in s
+    return 999_999 in s
 
 
 def main():
