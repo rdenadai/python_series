@@ -15,3 +15,5 @@
    **Escolher a Classe com a Maior Soma Ponderada:**
 
    $ \text{classe prevista} = \arg\max S_c $
+
+![knn](image.png)
