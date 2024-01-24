@@ -16,4 +16,6 @@
 
    $ \text{classe prevista} = \arg\max S_c $
 
+---
+
 ![knn](image.png)

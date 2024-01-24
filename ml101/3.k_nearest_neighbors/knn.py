@@ -3,8 +3,8 @@ from math import pow, sqrt
 from typing import Callable
 
 
-def euclidian(x: float, y: float) -> float:
-    return sqrt(pow(x - y, 2))
+def euclidian(x: tuple[float, float], y: tuple[float, float]) -> float:
+    return sqrt(pow(x[0] - y[0], 2) + pow(x[1] - y[1], 2))
 
 
 def manhattan(x: float, y: float) -> float:
@@ -22,7 +22,7 @@ def cosine_distance(x: float, y: float) -> float:
 class KNN:
     """K Nearest Neighbors Classifier One Dimensional"""
 
-    def __init__(self, X: list[float], y: list[int]) -> None:
+    def __init__(self, X: list[tuple[float, float]], y: list[int]) -> None:
         self.__X: list[float] = X
         self.__y: list[int] = y
 
@@ -31,7 +31,7 @@ class KNN:
 
     def predict(
         self,
-        P=list[float],
+        P=list[tuple[float, float]],
         k: int = 7,
         distance: Callable = euclidian,
         idw=False,

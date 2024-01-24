@@ -6,43 +6,39 @@ from matplotlib import pyplot as plt
 matplotlib.use("TkAgg")
 
 
+def condense_points(
+    X: list[tuple[float, float]],
+    y: list[int],
+) -> tuple:
+    x1, y1, x2, y2, x3, y3 = [], [], [], [], [], []
+    for i, point in enumerate(X):
+        if y[i] == 0:
+            x1.append(point[0])
+            y1.append(point[1])
+        elif y[i] == 1:
+            x2.append(point[0])
+            y2.append(point[1])
+        elif y[i] == 2:
+            x3.append(point[0])
+            y3.append(point[1])
+    return x1, y1, x2, y2, x3, y3
+
+
 def plot_values(
-    X: list[float],
+    X: list[tuple[float, float]],
     y: list[int],
-    pX: Optional[list[float]] = None,
-    py: Optional[list[int]] = None,
-) -> None:
-    plt.title("Data Points")
-    plt.scatter(X, y)
-    if pX and py:
-        plt.scatter(pX, py, color="red")
-    plt.show()
-
-
-def plot_one_dim_values(
-    X: list[float],
-    y: list[int],
-    pX: Optional[list[float]] = None,
+    pX: Optional[list[tuple[float, float]]] = None,
     py: Optional[list[int]] = None,
 ) -> None:
     plt.title("Data Points")
 
-    X1, X2 = [], []
-    for i, y_ in enumerate(y):
-        if y_ == 0:
-            X1.append(X[i])
-        else:
-            X2.append(X[i])
-    plt.scatter(X1, X1, color="blue")
-    plt.scatter(X2, X2, color="green")
-
+    x1, y1, x2, y2, x3, y3 = condense_points(X, y)
+    plt.scatter(x1, y1, color="blue")
+    plt.scatter(x2, y2, color="green")
+    plt.scatter(x3, y3, color="red")
     if pX and py:
-        X1, X2 = [], []
-        for i, y_ in enumerate(py):
-            if y_ == 0:
-                X1.append(pX[i])
-            else:
-                X2.append(pX[i])
-        plt.scatter(X1, X1, color="cyan")
-        plt.scatter(X2, X2, color="lime")
+        x1, y1, x2, y2, x3, y3 = condense_points(pX, py)
+        plt.scatter(x1, y1, color="cyan")
+        plt.scatter(x2, y2, color="lime")
+        plt.scatter(x3, y3, color="orange")
     plt.show()
