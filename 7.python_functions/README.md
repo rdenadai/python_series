@@ -1,5 +1,7 @@
 ## Funções em Python
 
+### Parte 1
+
 1. O que são funções em Python?
    "Functions are first-class objects"
 
@@ -25,15 +27,17 @@
 
 7. Funções anônimas (lambda)
 
-8. Closures
+### Parte 2
 
-9. Decorators
+1. Closures
 
-10. Funções parcialmente aplicadas
+2. Decorators
 
-    - partial
+3. Funções parcialmente aplicadas
 
-11. Referencias
+   - partial
+
+### Referencias
 
     - https://docs.python.org/3/reference/compound_stmts.html#function-definitions
     - https://docs.python.org/3/reference/datamodel.html#callable-types
