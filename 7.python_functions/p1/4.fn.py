@@ -5,6 +5,7 @@ def soma(x, y):
 # Observe o uso de * e ** para desempacotar os argumentos
 
 num = [1, 2]
+# soma(num[0], num[1])
 print("==>", soma(*num))  # 3
 
 

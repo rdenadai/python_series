@@ -43,3 +43,4 @@
     - https://docs.python.org/3/reference/datamodel.html#callable-types
     - https://docs.python.org/3/library/functions.html
     - https://docs.python.org/3/library/functools.html#functools.partial
+    - https://peps.python.org/pep-0309/

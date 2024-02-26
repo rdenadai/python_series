@@ -5,6 +5,7 @@ Funções usando *args e **kwargs
 
 # Função que recebe N argumentos usando *args (positional arguments)
 def sum_args(*args):
+    # args = (1, 2, 3, 4, 5)
     total = 0
     for arg in args:
         total += arg
@@ -13,6 +14,7 @@ def sum_args(*args):
 
 # Função que recebe N argumentos usando **kwargs (keyword arguments)
 def sum_kwargs(**kwargs):
+    # kwargs = {"a": 1, "b": 2, "c": 3, "d": 4, "e": 5}
     total = 0
     for value in kwargs.values():
         total += value
@@ -28,9 +30,10 @@ def sum_args_kwargs(*args, **kwargs):
     return total
 
 
+# sum_args(*args) => sum_args(1, 2, 3, 4, 5)
 print("==>", sum_args(1, 2, 3, 4, 5))  # 15
 
-
+# sum_kwargs(**kwargs) => sum_kwargs(a=1, b=2, c=3, d=4, e=5)
 print("==>", sum_kwargs(a=1, b=2, c=3, d=4, e=5))  # 15
 
 
